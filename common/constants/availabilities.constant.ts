@@ -1,17 +1,18 @@
 import { COLOR } from "../enums/color.enum";
-import { SHAPE } from "../enums/shape.enum";
-import { Settings } from "../interfaces/settings.interface";
+import { AppState } from "../interfaces/appstate.interface";
 
-export const defaultAvaibilities: Settings = {
+export const defaultState: AppState = {
     maxArtsCount: 1000,
+    arts: [],
     rarities: {
         shape: {
-            [SHAPE.CIRCLE]: 100,
-            [SHAPE.TRIANGLE]: 250,
-            [SHAPE.SQUARE]: 500,
-            [SHAPE.POLYGON]: 1000,
-            [SHAPE.LINE]: 10000,
-            [SHAPE.NONE]: 100000
+            star: 5,
+            circle: 10,
+            triangle: 25,
+            square: 50,
+            polygon: 100,
+            line: 1000,
+            none: 1000
         },
         color: {
             [COLOR.GOLD]: 10,
