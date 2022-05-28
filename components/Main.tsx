@@ -1,9 +1,10 @@
 interface MainProps {
-    hello: string;
+    name: string;
+    description: string;
 }
 
-export const Main = ({ hello }: MainProps) => {
-    return <div>{hello}</div>;
+export const Main = ({ description }: MainProps) => {
+    return <div>{description}</div>;
 };
 
 export default Main;

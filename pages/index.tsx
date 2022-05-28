@@ -3,18 +3,19 @@ import "reflect-metadata";
 import Head from "next/head";
 import Image from "next/image";
 
-import { GenerateTileCommand } from "../common/commands/generateTile.command";
+import { GenerateArtCommand } from "../common/commands/generateArt.command";
 import { mediator } from "../common/mediatr.config";
 import Main from "../components/Main";
 import styles from "../styles/Home.module.css";
 
 import type { GetServerSideProps, NextPage } from "next";
 export async function getServerSideProps(context: GetServerSideProps) {
-    const hello = await mediator.send(new GenerateTileCommand("Hello World"));
+    const { name, description } = await mediator.send(new GenerateArtCommand());
 
     return {
         props: {
-            hello
+            name,
+            description
         }
     };
 }

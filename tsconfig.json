@@ -14,6 +14,9 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
+    "types": [
+      "reflect-metadata"
+    ],
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
