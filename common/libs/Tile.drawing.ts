@@ -1,28 +1,33 @@
-import { Service } from "typedi";
+import Container, { Service } from "typedi";
 
-import { DIMENSION_TYPE, SHAPE_TYPE } from "../enums/shape.enum";
+import { DIMENSION_TYPE, DIMENSIONSIZE_TYPE } from "../enums/shape.type";
+import { Drawable } from "../interfaces/drawable.interface";
+import { RandomDrawing } from "./Random.drawing";
 
-export interface ITileDrawing {}
+export interface ITileDrawing {
+    toTile(): Drawable;
+}
 
 @Service()
 export class TileDrawing implements ITileDrawing {
     private _dimension: DIMENSION_TYPE;
-    private _shape: SHAPE_TYPE;
+    private _block: DIMENSIONSIZE_TYPE = 1;
 
-    constructor() {
+    constructor(private readonly _randomDrawing: RandomDrawing) {
         this._dimension = "3x3";
-        this._shape = "circle";
     }
 
-    set shape(shape: SHAPE_TYPE) {
-        this._shape = shape;
+    setBlock(block: Partial<DIMENSIONSIZE_TYPE>) {
+        this._block = block;
+        return this;
     }
 
-    set dimension(dimension: DIMENSION_TYPE) {
+    setDimension(dimension: DIMENSION_TYPE) {
         this._dimension = dimension;
+        return this;
     }
 
-    draw() {
-        //
+    toTile(): Drawable {
+        return {};
     }
 }

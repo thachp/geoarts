@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@inlet/react-pixi": "^6.7.0",
+    "@types/dot-prop-immutable": "^1.5.1",
     "@types/shuffle-array": "^1.0.2",
     "class-validator": "^0.13.2",
+    "dot-prop-immutable": "^2.1.1",
     "jotai": "^1.6.7",
     "mediatr-ts": "^0.2.1",
     "next": "12.1.6",
@@ -21,7 +23,8 @@
     "react-dom": "18.1.0",
     "reflect-metadata": "^0.1.13",
     "shuffle-array": "^1.0.1",
-    "typedi": "^0.10.0"
+    "typedi": "^0.10.0",
+    "valtio": "^1.6.1"
   },
   "devDependencies": {
     "@types/node": "17.0.34",

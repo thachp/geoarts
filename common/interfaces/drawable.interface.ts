@@ -4,6 +4,6 @@ export type Point = [number, number];
 
 export interface Drawable {
     color?: string;
-    thick?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
+    thick?: number;
     border?: BORDER_TYPE;
 }
