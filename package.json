@@ -12,11 +12,13 @@
   "dependencies": {
     "@inlet/react-pixi": "^6.7.0",
     "@types/lodash.range": "^3.2.7",
+    "@types/lodash.uniq": "^4.5.7",
     "class-validator": "^0.13.2",
     "dot-prop-immutable": "^2.1.1",
     "jotai": "^1.6.7",
     "lodash.random": "^3.2.0",
     "lodash.range": "^3.2.0",
+    "lodash.uniq": "^4.5.0",
     "mediatr-ts": "^0.2.1",
     "next": "12.1.6",
     "pixi.js": "^6.3.2",

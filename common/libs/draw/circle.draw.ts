@@ -28,8 +28,7 @@ export class DrawCircle implements IDraw {
             radius: this._randomDrawing.randomRadius(),
             fill: this._randomDrawing.randomFill(),
             thick: this._randomDrawing.randomThick(),
-            border: this._randomDrawing.randomBorder(),
-            rarityScore: this._generateRarity.calculateRarity("circle", color)
+            border: this._randomDrawing.randomBorder()
         };
     };
 }

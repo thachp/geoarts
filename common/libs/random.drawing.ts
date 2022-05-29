@@ -69,7 +69,7 @@ export class RandomDrawing implements IRandomDrawing {
     randomColor(color: COLOR_TYPE): string {
         return randomColor({
             luminosity: "random",
-            hue: color as string
+            hue: color === "other" ? "random" : color
         });
     }
 

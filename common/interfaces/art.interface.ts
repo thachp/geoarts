@@ -11,6 +11,7 @@ export interface Art {
     rarities: {
         shapes: Array<SHAPE_TYPE>;
         colors: Array<COLOR_TYPE>;
+        rarityScore: number;
     };
     _3x3: Drawable; // 1 item
     _2x2: Array<Drawable>; // 4 items
