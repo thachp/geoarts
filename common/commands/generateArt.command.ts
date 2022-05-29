@@ -6,7 +6,7 @@ import { DIMENSION_SIZES, DIMENSIONSIZE_TYPE } from "../enums/shape.type";
 import { Art } from "../interfaces/art.interface";
 import { TileDrawing } from "../libs/tile.drawing";
 
-export class GenerateArtCommand implements IRequest<string> {
+export class GenerateArtCommand implements IRequest<Art> {
     public readonly id: string;
     public readonly name: string;
     public readonly description: string;
@@ -20,13 +20,12 @@ export class GenerateArtCommand implements IRequest<string> {
 
 @RequestHandler(GenerateArtCommand)
 @Service()
-export class GenerateArtCommandHandler implements IRequestHandler<GenerateArtCommand, boolean> {
+export class GenerateArtCommandHandler implements IRequestHandler<GenerateArtCommand, Art> {
     constructor(private readonly tile: TileDrawing) {}
 
-    handle(command: GenerateArtCommand): Promise<boolean> {
+    handle(command: GenerateArtCommand): Promise<Art> {
         const _1x1Manual = pick(DIMENSION_SIZES, { picks: 1 }) as Partial<DIMENSIONSIZE_TYPE>;
-        const manual = this.tile.setBlock(_1x1Manual).setDimension("1x1").toTile();
-        const _3x3 = this.tile.setDimension("3x3").toTile();
+        const _3x3 = this.tile.setDimension("3x3").setBlock(1).toTile();
         const _2x2 = [1, 2, 3, 4].map((i) => {
             return this.tile
                 .setDimension("2x2")
@@ -34,7 +33,7 @@ export class GenerateArtCommandHandler implements IRequestHandler<GenerateArtCom
                 .toTile();
         });
 
-        const _1x1 = DIMENSION_SIZES.filter((i) => i != _1x1Manual).map((i) => {
+        const _1x1 = DIMENSION_SIZES.filter((i) => i !== _1x1Manual).map((i) => {
             return this.tile.setDimension("1x1").setBlock(i).toTile();
         });
 
@@ -47,13 +46,14 @@ export class GenerateArtCommandHandler implements IRequestHandler<GenerateArtCom
                 shapes: [],
                 colors: []
             },
-            manual,
             _3x3,
             _2x2,
             _1x1
         };
 
+        console.log("Generated art:", art);
+
         // save to the database
-        return Promise.resolve(true);
+        return Promise.resolve(art);
     }
 }

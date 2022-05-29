@@ -1,4 +1,4 @@
-export const SHAPE_TYPES = ["none", "line", "circle", "triangle", "square", "star", "polygon"] as const;
+export const SHAPE_TYPES = ["none", "line", "circle", "triangle", "rect", "star", "polygon"] as const;
 export const DIMENSION_TYPES = ["1x1", "2x2", "3x3"] as const;
 export const DIMENSION_SIZES = [1, 2, 3, 4, 5, 6, 7, 8, 9] as const;
 export const THICK_SIZES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;

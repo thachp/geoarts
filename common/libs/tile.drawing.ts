@@ -2,7 +2,8 @@ import Container, { Service } from "typedi";
 
 import { DIMENSION_TYPE, DIMENSIONSIZE_TYPE } from "../enums/shape.type";
 import { Drawable } from "../interfaces/drawable.interface";
-import { RandomDrawing } from "./random.drawing";
+import { DrawFactory } from "./draw/draw.factory";
+import { GenerateRarity } from "./generate.rarity";
 
 export interface ITileDrawing {
     toTile(): Drawable;
@@ -13,7 +14,7 @@ export class TileDrawing implements ITileDrawing {
     private _dimension: DIMENSION_TYPE;
     private _block: DIMENSIONSIZE_TYPE = 1;
 
-    constructor(private readonly _randomDrawing: RandomDrawing) {
+    constructor(private readonly _drawFactory: DrawFactory, private readonly _generateRarity: GenerateRarity) {
         this._dimension = "3x3";
     }
 
@@ -28,6 +29,7 @@ export class TileDrawing implements ITileDrawing {
     }
 
     toTile(): Drawable {
-        return {};
+        const shape = this._generateRarity.randomShape();
+        return this._drawFactory.drawable(shape, this._dimension, this._block);
     }
 }
