@@ -15,58 +15,55 @@ export interface Rarity {
     score: number;
 }
 
-export const shapeRarityScore = {
-    none: 0,
-    line: 1,
-    polygon: 2,
-    square: 3,
-    triangle: 4,
-    circle: 5,
-    diamond: 6,
-    star: 7
-};
+export enum ShapeRarityScore {
+    "none" = 0,
+    "line" = 1,
+    "polygon" = 2,
+    "square" = 3,
+    "triangle" = 4,
+    "circle" = 5,
+    "diamond" = 6,
+    "star" = 7
+}
 
-export const colorRarityScore = {
-    other: 0,
-    white: 1,
-    brown: 2,
-    black: 3,
-    pink: 4,
-    purple: 5,
-    yellow: 6,
-    blue: 7,
-    green: 8,
-    red: 9,
-    gold: 10
-};
+export enum ColorRarityScore {
+    "other" = 0,
+    "white" = 1,
+    "brown" = 2,
+    "black" = 3,
+    "pink" = 4,
+    "purple" = 5,
+    "yellow" = 6,
+    "blue" = 7,
+    "green" = 8,
+    "red" = 9,
+    "gold" = 10
+}
 
 @Service()
 export class GenerateRarity implements IRarityDrawing {
     toRarity(): Rarity {
-        const colorIndex = this._randomColor();
-        const shapeIndex = this._randomShape();
-        const score = this._calculateRarity(shapeIndex, colorIndex);
-
-        const color = Object.keys(colorRarityScore)[colorIndex];
-        const shape = Object.keys(shapeRarityScore)[shapeIndex];
+        const color = this._randomColor();
+        const shape = this._randomShape();
+        const score = this._calculateRarity(shape, color);
 
         return {
-            shape: SHAPE_TYPES[shape as any],
-            color: COLOR_TYPES[color as any],
+            shape,
+            color,
             score
         };
     }
 
-    private _calculateRarity(shapeIndex: number = 0, colorIndex: number = 0): number {
-        const colorScore = Object.values(colorRarityScore)[colorIndex];
-        const shapeScore = Object.values(shapeRarityScore)[shapeIndex];
+    private _calculateRarity(shape: SHAPE_TYPE = "none", color: COLOR_TYPE = "other"): number {
+        const shapeScore = ShapeRarityScore[shape as any] as unknown as number;
+        const colorScore = ColorRarityScore[color as any] as unknown as number;
         return shapeScore * colorScore;
     }
 
-    private _randomColor(): number {
-        return pick(COLOR_TYPES, { picks: 1 })[0] as any;
+    private _randomColor(): COLOR_TYPE {
+        return pick(COLOR_TYPES, { picks: 1 }) as COLOR_TYPE;
     }
-    private _randomShape(): number {
-        return pick(SHAPE_TYPES, { picks: 1 })[0] as any;
+    private _randomShape(): SHAPE_TYPE {
+        return pick(SHAPE_TYPES, { picks: 1 }) as SHAPE_TYPE;
     }
 }

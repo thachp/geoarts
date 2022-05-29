@@ -4,7 +4,7 @@ import { Service } from "typedi";
 
 import { DIMENSION_SIZES, DIMENSIONSIZE_TYPE } from "../enums/shape.type";
 import { Art } from "../interfaces/art.interface";
-import { TileDrawing } from "../libs/Tile.drawing";
+import { TileDrawing } from "../libs/tile.drawing";
 
 export class GenerateArtCommand implements IRequest<string> {
     public readonly id: string;
