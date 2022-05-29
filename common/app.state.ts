@@ -7,31 +7,7 @@ import { AppState } from "./interfaces/appstate.interface";
 
 const defaultState: AppState = {
     maxArtsCount: 1000,
-    arts: [],
-    rarities: {
-        shape: {
-            star: 5,
-            circle: 10,
-            triangle: 25,
-            square: 50,
-            polygon: 100,
-            line: 1000,
-            none: 1000
-        },
-        color: {
-            gold: 10,
-            red: 50,
-            green: 50,
-            blue: 50,
-            yellow: 100,
-            purple: 100,
-            pink: 500,
-            black: 500,
-            brown: 500,
-            white: 1000,
-            other: 10000
-        }
-    }
+    arts: []
 };
 
 const proxyAppState = proxy(defaultState);

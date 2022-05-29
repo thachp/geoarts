@@ -2,7 +2,7 @@ import Container, { Service } from "typedi";
 
 import { DIMENSION_TYPE, DIMENSIONSIZE_TYPE } from "../enums/shape.type";
 import { Drawable } from "../interfaces/drawable.interface";
-import { RandomDrawing } from "./Random.drawing";
+import { RandomDrawing } from "./random.drawing";
 
 export interface ITileDrawing {
     toTile(): Drawable;
