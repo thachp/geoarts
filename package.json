@@ -11,11 +11,10 @@
   },
   "dependencies": {
     "@inlet/react-pixi": "^6.7.0",
-    "@types/dot-prop-immutable": "^1.5.1",
-    "@types/shuffle-array": "^1.0.2",
     "class-validator": "^0.13.2",
     "dot-prop-immutable": "^2.1.1",
     "jotai": "^1.6.7",
+    "lodash.random": "^3.2.0",
     "mediatr-ts": "^0.2.1",
     "next": "12.1.6",
     "pixi.js": "^6.3.2",
@@ -28,6 +27,9 @@
     "valtio": "^1.6.1"
   },
   "devDependencies": {
+    "@types/dot-prop-immutable": "^1.5.1",
+    "@types/lodash.random": "^3.2.7",
+    "@types/shuffle-array": "^1.0.2",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@types/jest": "^27.5.1",

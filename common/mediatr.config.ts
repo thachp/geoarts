@@ -1,6 +1,6 @@
 import { Mediator, mediatorSettings } from "mediatr-ts";
 
-import InversifyResolver, { TypeDiResolver } from "./typedi.resolver";
+import TypeDiResolver from "./typedi.resolver";
 
 mediatorSettings.resolver = new TypeDiResolver();
 
