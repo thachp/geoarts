@@ -1,8 +1,8 @@
-import { COLOR_TYPE } from "../enums/color.type";
-import { SHAPE_TYPE } from "../enums/shape.type";
-import { Drawable } from "./drawable.interface";
+import { COLOR_TYPE } from "../../enums/color.type";
+import { SHAPE_TYPE } from "../../enums/shape.type";
+import { Drawable } from "../../interfaces/drawable.interface";
 
-export interface Art {
+export interface ArtViewModel {
     id: string;
     name: string;
     description: string;

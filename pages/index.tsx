@@ -3,7 +3,7 @@ import "reflect-metadata";
 import Head from "next/head";
 
 import { GenerateArtCommand } from "../common/commands/generateArt.command";
-import { Art } from "../common/interfaces/art.interface";
+import { Art } from "../common/commands/viewmodels/art.viewmodel";
 import { mediator } from "../common/mediatr.config";
 import Main from "../components/Main";
 import styles from "../styles/Home.module.css";

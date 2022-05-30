@@ -4,11 +4,11 @@ import { pick } from "shuffle-array";
 import { Service } from "typedi";
 
 import { DIMENSION_SIZES, DIMENSIONSIZE_TYPE } from "../enums/shape.type";
-import { Art } from "../interfaces/art.interface";
 import { GenerateRarity } from "../libs/generate.rarity";
 import { TileDrawing } from "../libs/tile.drawing";
+import { ArtViewModel } from "./viewmodels/art.viewmodel";
 
-export class GenerateArtCommand implements IRequest<Art> {
+export class GenerateArtCommand implements IRequest<ArtViewModel> {
     public readonly id: string;
     public readonly name: string;
     public readonly description: string;
@@ -22,10 +22,10 @@ export class GenerateArtCommand implements IRequest<Art> {
 
 @RequestHandler(GenerateArtCommand)
 @Service()
-export class GenerateArtCommandHandler implements IRequestHandler<GenerateArtCommand, Art> {
+export class GenerateArtCommandHandler implements IRequestHandler<GenerateArtCommand, boolean> {
     constructor(private readonly tile: TileDrawing, private readonly _generateRarity: GenerateRarity) {}
 
-    handle(command: GenerateArtCommand): Promise<Art> {
+    handle(command: GenerateArtCommand): Promise<boolean> {
         const _1x1Manual = pick(DIMENSION_SIZES, { picks: 1 }) as Partial<DIMENSIONSIZE_TYPE>;
         const _3x3 = this.tile.setDimension("3x3").setBlock(1).toTile();
         const _2x2 = [1, 2, 3, 4].map((i) => {
@@ -44,7 +44,7 @@ export class GenerateArtCommandHandler implements IRequestHandler<GenerateArtCom
         const colors = uniq(tiles.map((i) => i.color));
         const rarityScore = this._generateRarity.calculateRarity(shapes, colors);
 
-        const art: Art = {
+        const art: ArtViewModel = {
             id: command.id,
             name: command.name,
             description: command.description,
@@ -59,9 +59,9 @@ export class GenerateArtCommandHandler implements IRequestHandler<GenerateArtCom
             _1x1
         };
 
-        console.log("Generated art:", art.rarities);
+        console.log("Generated art:", art);
 
         // save to the database
-        return Promise.resolve(art);
+        return Promise.resolve(true);
     }
 }

@@ -9,10 +9,15 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  },
   "dependencies": {
     "@inlet/react-pixi": "^6.7.0",
+    "@prisma/client": "^3.14.0",
     "@types/lodash.range": "^3.2.7",
     "@types/lodash.uniq": "^4.5.7",
+    "bson": "^4.6.4",
     "class-validator": "^0.13.2",
     "dot-prop-immutable": "^2.1.1",
     "jotai": "^1.6.7",
@@ -22,11 +27,13 @@
     "mediatr-ts": "^0.2.1",
     "next": "12.1.6",
     "pixi.js": "^6.3.2",
+    "prisma": "^3.14.0",
     "randomcolor": "^0.6.2",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "reflect-metadata": "^0.1.13",
     "shuffle-array": "^1.0.1",
+    "slugify": "^1.6.5",
     "typedi": "^0.10.0",
     "valtio": "^1.6.1"
   },

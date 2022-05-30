@@ -4,6 +4,7 @@ import randomColor from "randomcolor";
 import { pick } from "shuffle-array";
 import { Service } from "typedi";
 
+import { ARTTHEME_TYPE, ARTTHEME_TYPES } from "../enums/arttheme.type";
 import { COLOR_TYPE } from "../enums/color.type";
 import { BORDER_TYPES, DIMENSION_TYPE, THICK_SIZES, THICK_TYPE } from "../enums/shape.type";
 import { BORDER_TYPE, Point } from "../interfaces/drawable.interface";
@@ -89,6 +90,10 @@ export class RandomDrawing implements IRandomDrawing {
         const x = random(0, this._maxRangeX);
         const y = random(0, this._maxRangeY);
         return [x, y];
+    }
+
+    randomTheme(): ARTTHEME_TYPE {
+        return pick(ARTTHEME_TYPES, { picks: 1 }) as ARTTHEME_TYPE;
     }
 
     randomThick(): THICK_TYPE {
