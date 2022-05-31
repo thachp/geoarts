@@ -17,6 +17,7 @@
     "@heroicons/react": "^1.0.6",
     "@inlet/react-pixi": "^6.7.0",
     "@prisma/client": "^3.14.0",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
     "@types/lodash.range": "^3.2.7",
     "@types/lodash.uniq": "^4.5.7",
     "bson": "^4.6.4",

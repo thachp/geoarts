@@ -1,7 +1,6 @@
 interface MintArtProps {
     address: string;
     balance: number;
-    rarities: string[];
 }
 
 export const MintArt = ({ address = "0xa8Ebd5233615664cb5FC612288AA1E1D8522DD0D", balance = 10 }: MintArtProps) => {

@@ -6,7 +6,7 @@ const navigation = [
     { name: "Home", href: "/" },
     { name: "Geometric Arts", href: "/gallery" },
     { name: "Litepaper", href: "/litepaper" },
-    { name: "About Me", href: "/about-me" }
+    { name: "About Me", href: "/about" }
 ];
 
 export const Layout = ({ children }: any) => {
@@ -91,8 +91,8 @@ export const Layout = ({ children }: any) => {
             </div>
             {children}
             <footer>
-                <div className="mt-2 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
-                    <div className="border-t-none border-gray-200 py-8 text-sm text-gray-500 text-center">
+                <div className="sm:my-4 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
+                    <div className="border-t-none border-gray-200 text-sm text-gray-500 text-center">
                         <span className="block sm:inline">&copy; 1985-{new Date().getFullYear()} Patrick Thach.</span>{" "}
                         <span className="block sm:inline">All rights reserved.</span>
                     </div>
