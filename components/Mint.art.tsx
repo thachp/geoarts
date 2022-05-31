@@ -13,7 +13,7 @@ export const MintArt = ({ address = "0xa8Ebd5233615664cb5FC612288AA1E1D8522DD0D"
                         type="submit"
                         className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-xl font-medium text-white bg-sky-800 hover:bg-sky-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-600"
                     >
-                        Mint this artwork for 1 Ethereum
+                        Mint this artwork for 1 Ether
                     </button>
                 </div>
             </div>
@@ -21,7 +21,7 @@ export const MintArt = ({ address = "0xa8Ebd5233615664cb5FC612288AA1E1D8522DD0D"
                 <div className="text-xs leading-5 text-gray-500">
                     <span className="text-gray-900">Your wallet address: {address}</span>
                     <br />
-                    <span className="text-gray-900">Wallet Balance: {balance} Ethereum</span>
+                    <span className="text-gray-900">Wallet Balance: {balance} Ether</span>
                 </div>
             </div>
         </div>
