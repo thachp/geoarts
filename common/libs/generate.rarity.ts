@@ -47,7 +47,7 @@ export enum ColorRarityScoreCount {
     "other" = 1000,
     "white" = 500,
     "brown" = 500,
-    "black" = 400,
+    "black" = 500,
     "pink" = 400,
     "orange" = 400,
     "purple" = 300,

@@ -13,6 +13,8 @@
     "seed": "ts-node prisma/seed.ts"
   },
   "dependencies": {
+    "@headlessui/react": "^1.6.4",
+    "@heroicons/react": "^1.0.6",
     "@inlet/react-pixi": "^6.7.0",
     "@prisma/client": "^3.14.0",
     "@types/lodash.range": "^3.2.7",

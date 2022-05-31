@@ -16,8 +16,8 @@ model Art {
   name         String?
   description  String?
   threebythree Json
-  twobytwo     Json
-  onebyone     Json
+  twobytwo     Json[]
+  onebyone     Json[]
   rarities     Json
   theme        String
   events       Event[]
