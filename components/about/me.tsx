@@ -51,9 +51,9 @@ export const Me = (props: MainProps) => {
                                             justice. In these four principles, I found tolerance in everyone regardless
                                             of their background. Stoicism allows me to enjoy simplicity at work, at
                                             home, in my family, and in my personality. I was also a Buddhist monk,
-                                            following the Theravāda tradition, where I followed the ten precepts of
-                                            Buddhism. As a layman, I follow the five precepts; refrain from taking life,
-                                            refrain from taking what is not given, refrain from the misuse of the
+                                            following the Theravāda tradition, where I practiced the ten precepts of
+                                            Buddhism. As a layman, I practice the five precepts; refrain from taking
+                                            life, refrain from taking what is not given, refrain from the misuse of the
                                             senses, refrain from wrong speech, and refrain from intoxicants that cloud
                                             the mind. I have learned about the people I have met, their suffering, and
                                             their happiness. I am forever grateful for the people I loved and the people
@@ -61,10 +61,10 @@ export const Me = (props: MainProps) => {
                                             the other side of the tree, it will eventually rattle this side.
                                         </p>
                                         <p>
-                                            I hope for my art collection to be gazed at by everyone digitally online and
-                                            in their physical form from a short distance at home, in the workspace, in
-                                            art galleries, and wherever possible. While looking at my geometric arts, I
-                                            hope people reflect on their lives over the years and be at peace for who
+                                            I hope for my art collections to be gazed at by everyone digitally online
+                                            and in their physical form from a short distance at home, in the workspace,
+                                            in art galleries, and wherever possible. While looking at my geometric arts,
+                                            I hope people reflect on their lives over the years and be at peace for who
                                             they are. My wealth may soon dwindle, my physical body will soon fall apart,
                                             and my mind will soon deteriorate, but my collections I hope for it to live
                                             into future generations.
